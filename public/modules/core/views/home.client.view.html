@@ -1,0 +1,99 @@
+<section data-ng-controller="HomeController">
+	<div class="container">
+		<div class="row text-center">
+			<h1 class="font-effect-anaglyph">
+				RecordVs
+			</h1>
+			<h3>Rank your favorite records, two at a time.</h3>
+		</div>
+		<div class="row albums">
+		  <div class="col-lg-4 col-lg-offset-2 column1" ng-style="record1.style.color1" ng-class="{bounceIn : entering}" ng-click="enter()">
+		  	<img ng-click="vote(0)" class="img-responsive album" ng-src="{{record1.url}}">
+		  	<div class="text-center">
+		  		<h2 ng-style="record1.style.color2">{{record1.title}}</h2>
+		  		<h3 ng-style="record1.style.color3">{{record1.artist}}</h3>
+		  	</div>
+		  </div>
+		  <div class="col-lg-4 col-lg-offset-2 column2" ng-style="record2.style.color1" ng-class="{bounceIn : entering}" ng-click="enter()">
+		  	<img ng-click="vote(1)" class="img-responsive album" ng-src="{{record2.url}}">
+		  	<div class="text-center">
+		  		<h2 ng-style="record2.style.color2">{{record2.title}}</h2>
+		  		<h3 ng-style="record2.style.color3">{{record2.artist}}</h3>
+		  	</div>
+		  </div>
+		</div>
+		<div class="row description text-center">
+		<h1 class="font-effect-anaglyph">How It Works</h1>
+		<h3>1. We'll use your Last.fm account to find your favorite records.</h3>
+		<h3>2. Play by choosing your favorite of two random records from your collection.</h3>
+		<h3>3. Our algorithms will build your charts based on every choice you make. The more you play, the more accurate your charts will be.</h3>
+		<h3>4. Your charts are public, share them around!</h3>
+		<a href="/#!/signup"><button>Get Started <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+		</div>
+	</div>
+
+</section>
+
+<style>
+
+body{
+	background-image: url('/modules/core/img/backgrounds/stardust.png');
+	color : white;
+}
+.navbar-inverse .navbar-brand{
+	font-size : 1.4em;
+}
+
+.navbar-inverse{
+	background : transparent;
+	border: transparent;
+}
+.album{
+	width: 300px;
+	margin: auto;
+	padding-top: 7%;
+}
+.albums{
+	padding: 3% 0 5%; 
+}
+.column1 {
+	margin-right: 1%;
+	border-radius: 25px;
+	background-color: #EFEDF0;
+}
+.column2 {
+	margin-left: 1%;
+	border-radius: 25px;
+	background-color: #EFEDF0;
+}
+.albums h2, .albums h3{
+	margin: 10px 0 5px;
+}
+.albums h2{
+	font-weight: 900;
+}
+.albums h3{
+	font-weight: 700;
+	padding-bottom: 5%;
+}
+.btn-primary{
+	background-color: black;
+}
+.description{
+	margin-bottom: 10%;
+}
+button{
+	height: 100px;
+	width: 50%;
+	background-color: black;
+	border : transparent;
+	font-weight: 900;
+	font-size: 3em;
+	border-radius: 25px;
+	margin-top: 3%;
+}
+a button {
+	color: white;
+}
+
+</style>

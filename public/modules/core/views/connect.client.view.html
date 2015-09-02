@@ -1,0 +1,40 @@
+<section data-ng-controller="HomeController">
+	<div class="jumbotron text-center">
+		<br>
+		<div class="row">
+				<h1>
+					What's your Last.fm account?
+				</h1>
+				<h4>
+					This will help us know which albums you've heard so that you can start ranking them.
+				</h4>
+				<div ng-show="step == 'fill'">
+					<form name="userForm" data-ng-submit="connect()" class="signin form-horizontal" autocomplete="off">
+						<fieldset>
+							<div class="form-group">
+								<input type="text" id="lastfm" name="lastfm" class="form-control form-lastfm" required data-ng-model="lastfm" placeholder="Last.fm Username">
+							</div>
+							<div class="text-center form-group">
+								<button type="submit" class="btn btn-large btn-primary">Connect Account</button>
+							</div>
+						</fieldset>
+					</form>
+					<br>
+					<h4>If you don't have a Last.fm Account, we can use the most popular Last.fm albums.</h4>
+					<div class="text-center form-group">
+						<button ng-click="noAccount()" class="btn btn-large btn-primary">I don't have a Last.fm Account</button>
+					</div>
+				</div>
+				<div ng-show="step == 'error'">
+					<h1>We couldn't reach Last.fm, please try again later :(</h1>
+				</div>
+				<div ng-show="step == 'success'">
+					<h1>Success!</h1>
+				</div>
+		</div>
+	</div>
+	<div ng-show="step == 'loading'" class="text-center">
+		<img src="/modules/core/img/loader.gif">
+		<h4>We're accessing your Last.fm information, this may take a few moments.</h4>
+	</div>
+</section>

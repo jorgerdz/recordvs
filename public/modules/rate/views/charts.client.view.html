@@ -1,0 +1,47 @@
+<section data-ng-controller="RatingsController" ng-init="getUser()">
+	<div class="container">
+		<div class="col-lg-4 col-lg-offset-4" ng-show="error">
+			<h1 class="text-center">Sorry!</h1>
+			<h4 class="text-center">We couldn't find anyone with this username.</h4>
+		</div>
+		<div ng-repeat="album in shownAlbums" ng-class="{cyan : $index%2==0, red : $index%2!=0}" class="row albums">
+		  <div class="col-lg-4 col-lg-offset-2">
+		  	<img class="img-responsive album" ng-src="{{album.image}}">
+		  </div>
+		  <div class="col-lg-4">
+		  	<div>
+		  	<h1>{{$index+1}}</h1>
+		  		<h2>{{album.title}}</h2>
+		  		<h3>{{album.artist}}</h3>
+		  		<h4>Your Last.fm Playcount: {{album.playcount}}</h4>
+		  	</div>
+		  </div>
+		</div>
+		<div infinite-scroll="paging()" infinite-scroll-distance="2"></div>
+	<style>
+	.two {
+		background-color: #432;
+	}
+	.albums{
+		margin: 5% 0 5%; 
+		padding: 2% 0 2%;
+		border-radius: 25px;
+		background-color: #EFEDF0;
+	}
+	.cyan{
+		background-color: cyan;
+	}
+	.red{
+		background-color: red;
+	}
+	.album {
+		margin: auto;
+	}
+	h1{
+		font-weight: 900;
+	}
+	h2{
+		font-weight: 700;
+	}
+	</style>
+</section>

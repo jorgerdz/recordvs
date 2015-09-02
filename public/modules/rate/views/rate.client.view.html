@@ -1,0 +1,51 @@
+<section data-ng-controller="RatingsController" ng-init="initialize()">
+	<div class="container">
+		<div class="row albums">
+		  <div class="col-lg-4 col-lg-offset-2 column1" ng-style="album1color1Style" ng-class="{bounceIn : entering}">
+		  	<img ng-click="vote(1)" class="img-responsive album" ng-src="{{album1.image}}">
+		  	<div class="text-center">
+		  		<h2 ng-style="album1color2Style">{{album1.title}}</h2>
+		  		<h3 ng-style="album1color3Style">{{album1.artist}}</h3>
+		  		<h4><a href="{{album1.url}}" ng-style="album1color2Style">Last.fm Playcount : {{album1.playcount}}</a></h4>
+		  	</div>
+		  </div>
+		  <div class="col-lg-4 column2" ng-class="{bounceIn : entering}" ng-style="album2color1Style">
+		  	<img ng-click="vote(2)" class="img-responsive album" ng-src="{{album2.image}}">
+		  	<div class="text-center">
+		  		<h2 ng-style="album2color2Style">{{album2.title}}</h2>
+		  		<h3 ng-style="album2color3Style">{{album2.artist}}</h3>
+		  		<h4><a href="{{album2.url}}" ng-style="album2color2Style">Last.fm Playcount : {{album2.playcount}}</a></h4>
+		  	</div>
+		  </div>
+		</div>
+	</div>
+	<style>
+	.albums{
+		padding: 5% 0 5%; 
+	}
+	.album {
+		margin: auto;
+		padding-top: 12%;
+	}
+	.column1 {
+		margin-right: 1%;
+		border-radius: 25px;
+		background-color: #EFEDF0;
+	}
+	.column2 {
+		margin-left: 1%;
+		border-radius: 25px;
+		background-color: #EFEDF0;
+	}
+	h2, h3{
+		margin: 10px 0 5px;
+	}
+	h2{
+		font-weight: 900;
+	}
+	h3{
+		font-weight: 700;
+	}
+
+	</style>
+</section>

@@ -1,0 +1,43 @@
+<section data-ng-controller="RatingsController" ng-init="getTopUsers()">
+	<div class="container">
+		<div class="col-lg-4 col-lg-offset-4" ng-show="error">
+			<h1 class="text-center">Sorry!</h1>
+			<h4 class="text-center">We couldn't find anyone with this username.</h4>
+		</div>
+		<div ng-repeat="user in topUsers" class="row user">
+		  <div ng-class="{cyan : $index%2==0, red : $index%2!=0}" class="col-lg-4 col-lg-offset-4 column text-center">
+		  	<div>
+		  		<h1>{{$index+1}}</h1>
+		  		<h2><a href="/#!/{{user.username}}">{{user.username}}</a></h2>
+		  		<h3>Votes: {{user.votes}}</h3>
+		  	</div>
+		  </div>
+		</div>
+		<div infinite-scroll="paging()" infinite-scroll-distance="2"></div>
+	<style>
+	.two {
+		background-color: #432;
+	}
+	.user{
+		padding: 1% 0 1%;
+	}
+	.cyan{
+		background-color: cyan;
+	}
+	.red{
+		background-color: red;
+	}
+	.column{
+		border-radius: 25px;
+	}
+	.album {
+		margin: auto;
+	}
+	h1{
+		font-weight: 900;
+	}
+	h2{
+		font-weight: 700;
+	}
+	</style>
+</section>
